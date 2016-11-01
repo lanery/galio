@@ -2,8 +2,8 @@
 """
 @Author: ryanlane
 @Date:   2016-10-30 10:01:29
-@Last Modified by:   ryanlane
-@Last Modified time: 2016-10-31 23:27:24
+@Last Modified by:   Ryan Lane
+@Last Modified time: 2016-10-31 23:51:41
 """
 
 import numpy as np
@@ -38,17 +38,6 @@ class Lens(Grid):
             self.u = self.u + mask
 
         return self
-
-    # def electrodes_2_grid(self):
-    #     """ """
-    #     for e in self.electrodes:
-    #         u_pts = np.indices(self.u.shape).reshape(2, -1).T
-    #         e.transform(self)
-    #         path = Path(e.coords)
-    #         mask = path.contains_points(u_pts, radius=1e-9)
-    #         mask = mask.reshape(self.u.shape).astype(self.u.dtype)
-    #         self.u = self.u + mask
-    #     return self
 
     def get_electrodes(self):
         return self.electrodes
