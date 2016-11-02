@@ -3,7 +3,7 @@
 @Author: ryanlane
 @Date:   2016-10-30 10:01:29
 @Last Modified by:   Ryan Lane
-@Last Modified time: 2016-10-31 23:51:41
+@Last Modified time: 2016-11-01 23:10:50
 """
 
 import numpy as np
@@ -18,12 +18,14 @@ from electrode import Electrode
 class Lens(Grid):
     """docstring for Lens"""
 
-    def __init__(self, z, electrodes, nx=101, ny=51,
-                 xmin=0, xmax=30, ymin=0, ymax=10):
+    def __init__(self, z, electrodes, potentials,
+                 nx=101, ny=51, xmin=0, xmax=30, ymin=0, ymax=10):
         super(Lens, self).__init__(
             nx, ny, xmin, xmax, ymin, ymax)
         self.z = z
         self.electrodes = electrodes
+        self.potentials = potentials
+        self.us = None
 
     def add_electrode(self, electrode, to_grid=True):
         """ """
