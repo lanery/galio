@@ -2,8 +2,8 @@
 """
 @Author: ryanlane
 @Date:   2016-10-30 12:44:41
-@Last Modified by:   ryanlane
-@Last Modified time: 2016-10-31 22:19:07
+@Last Modified by:   Ryan Lane
+@Last Modified time: 2016-11-24 21:22:51
 """
 
 import numpy as np
@@ -50,8 +50,7 @@ class Grid(object):
         u = self.u
         self.old_u = u.copy()
 
-        u[1:-1, 1:-1] = np.where(
-            u[1:-1, 1:-1] < 1,
+        u[1:-1, 1:-1] = np.where(u[1:-1, 1:-1] < 1,
             ((u[0:-2, 1:-1] + u[2:, 1:-1]) * dy2 +
              (u[1:-1, 0:-2] + u[1:-1, 2:]) * dx2) * 1/dnr, 1)
 
@@ -67,3 +66,7 @@ class Grid(object):
             err = self.laplace()
             c += 1
         return c
+
+    def reset(self):
+        self.u.fill(0)
+        return self
