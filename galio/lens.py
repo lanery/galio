@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+
 """
 @Author: ryanlane
 @Date:   2016-10-30 10:01:29
 @Last Modified by:   Ryan Lane
-@Last Modified time: 2016-11-25 03:28:10
+@Last Modified time: 2016-11-25 23:41:31
 """
+
 
 import numpy as np
 import pandas as pd
@@ -28,12 +30,16 @@ class Lens(Grid):
     def add_electrode(self, electrode):
         """
         Add one or more electrodes to lens.
-        TODO: handle everything"""
-        if isinstance(electrode, list):
-            self.electrodes += electrode
-        elif isinstance(electrode, Electrode):
+        TODO: handle everything
+        """
+        if isinstance(electrode, Electrode):
             if electrode not in self.electrodes:
                 self.electrodes.append(electrode)
+        elif isinstance(electrode, list):
+            self.electrodes += electrode
+        else:
+            raise TypeError('`electrode` must be one of ')
+
 
     def rem_electrode(self, electrode):
         """ """

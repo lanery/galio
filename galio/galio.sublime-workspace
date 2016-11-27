@@ -1,0 +1,339 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Tur",
+				"TutorialApp\tclass"
+			],
+			[
+				"elec",
+				"electrodes"
+			],
+			[
+				"elect",
+				"electrodes"
+			],
+			[
+				"vert",
+				"vertices"
+			],
+			[
+				"res",
+				"reshape"
+			],
+			[
+				"ver",
+				"vertices"
+			],
+			[
+				"poin",
+				"points_contains"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Efields.py",
+			"settings":
+			{
+				"buffer_size": 385,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"last_filter": "Package Control: in",
+		"selected_items":
+		[
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: insta\t",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/ryanlane/Documents/Galio_Optics/galio"
+	],
+	"file_history":
+	[
+		"/Users/ryanlane/Desktop/Efields.py",
+		"/Users/ryanlane/Documents/Galio_Optics/galio/Efields.py",
+		"/Users/ryanlane/Documents/Random/kivy_test.py",
+		"/Users/ryanlane/Library/Application Support/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/Users/ryanlane/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/Users/ryanlane/anaconda/pkgs/matplotlib-1.5.3-np111py35_0/lib/python3.5/site-packages/matplotlib/bezier.py",
+		"/Users/ryanlane/anaconda/pkgs/matplotlib-1.5.3-np111py35_0/lib/python3.5/site-packages/matplotlib/backends/backend_qt5agg.py",
+		"/Users/ryanlane/anaconda/pkgs/matplotlib-1.5.3-np111py35_0/lib/python3.5/site-packages/matplotlib/backends/backend_qt5.py",
+		"/Users/ryanlane/anaconda/pkgs/matplotlib-1.5.3-np111py35_0/lib/python3.5/site-packages/matplotlib/raise_window.py",
+		"/Users/ryanlane/anaconda/pkgs/matplotlib-1.5.3-np111py35_0/lib/python3.5/site-packages/matplotlib/pyplot.py",
+		"/Users/ryanlane/anaconda/pkgs/matplotlib-1.5.3-np111py35_0/lib/python3.5/site-packages/matplotlib-1.5.3-py3.5.egg-info/requires.txt",
+		"/Users/ryanlane/anaconda/pkgs/matplotlib-1.5.3-np111py35_0/lib/python3.5/site-packages/matplotlib/__init__.py",
+		"/Users/ryanlane/Documents/Random/threading_practice.py",
+		"/Users/ryanlane/anaconda/pkgs/matplotlib-1.5.3-np111py35_0/lib/python3.5/site-packages/mpl_toolkits/__init__.py",
+		"/Users/ryanlane/anaconda/pkgs/matplotlib-1.5.3-np111py35_0/lib/python3.5/site-packages/matplotlib/_version.py",
+		"/Users/ryanlane/anaconda/pkgs/matplotlib-1.5.3-np111py35_0/lib/python3.5/site-packages/matplotlib/quiver.py",
+		"/Users/ryanlane/.bash_profile",
+		"/Users/ryanlane/.ipython/profile_default/ipython_config.py",
+		"/Users/ryanlane/Documents/Random/threading.py",
+		"/Users/ryanlane/Documents/Random/stackoverflow/temp.py",
+		"/Users/ryanlane/Documents/Random/stackoverflow/temp2.py",
+		"/Users/ryanlane/Documents/FEI/github_repos/CPO/beam_characterization.py",
+		"/Users/ryanlane/Documents/Random/stackoverflow/quandl.py",
+		"/Users/ryanlane/Documents/FEI/github_repos/CPO/laplace_for_loop.py",
+		"/Users/ryanlane/Documents/FEI/github_repos/CPO/.gitignore",
+		"/Users/ryanlane/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/ryanlane/Documents/FEI/github_repos/CPO/electrode.py",
+		"/Users/ryanlane/Documents/Random/stackoverflow/temp.csv",
+		"/Users/ryanlane/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/ryanlane/anaconda/lib/python2.7/site-packages/timing.py"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"self.window.show()",
+			"gcf",
+			"pyplot"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Efields.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								385,
+								385
+							]
+						],
+						"settings":
+						{
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								224,
+								10,
+								30,
+								2,
+								10,
+								24,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.anaconda_documentation":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "galio.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 181.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

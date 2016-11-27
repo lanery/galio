@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+
 """
 @Author: ryanlane
 @Date:   2016-10-30 12:44:41
 @Last Modified by:   Ryan Lane
-@Last Modified time: 2016-11-24 21:22:51
+@Last Modified time: 2016-11-25 16:18:07
 """
+
 
 import numpy as np
 import pandas as pd
