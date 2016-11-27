@@ -4,7 +4,7 @@
 @Author: ryanlane
 @Date:   2016-10-30 10:01:29
 @Last Modified by:   Ryan Lane
-@Last Modified time: 2016-11-25 23:41:31
+@Last Modified time: 2016-11-27 00:50:49
 """
 
 
@@ -13,8 +13,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.path import Path
 
-from grid import Grid
-from electrode import Electrode
+from .grid import Grid
+from .electrode import Electrode
 
 
 class Lens(Grid):
@@ -27,30 +27,50 @@ class Lens(Grid):
         self.z = z
         self.electrodes = electrodes
 
+
     def add_electrode(self, electrode):
         """
-        Add one or more electrodes to lens.
-        TODO: handle everything
+        Add either an individual or a list of electrodes to lens.
         """
         if isinstance(electrode, Electrode):
             if electrode not in self.electrodes:
                 self.electrodes.append(electrode)
         elif isinstance(electrode, list):
-            self.electrodes += electrode
+            for e in electrode:
+                if e not in self.electrodes:
+                    self.electrodes.append(e)
         else:
-            raise TypeError('`electrode` must be one of ')
+            raise TypeError('`electrode` must be either an Electrode object '
+                            'or a list of Electrode objects.')
+        return self
 
 
     def rem_electrode(self, electrode):
-        """ """
-        try:
-            self.electrodes.remove(electrode)
-        except ValueError:
-            raise ValueError('Specified electrode not in lens.')
+        """
+        Remove either an individual or a list of electrodes from lens.
+        """
+        # if electrode == Electrode()
+        if isinstance(electrode, Electrode):
+            if electrode in self.electrodes:
+                self.electrodes.remove(electrode)
+        # if electrode == [Electrode(), Electrode(), ...]
+        elif isinstance(electrode, list):
+            for e in electrode:
+                if e in self.electrodes:
+                    self.electrodes.remove(e)
+                else:
+                    raise ValueError('Specified electrode not in lens.')
+        # if electrode != Electrode() and 
+        #    electrode != [Electrode(), Electrode(), ...]
+        else:
+            raise TypeError('`electrode` must be either an Electrode object '
+                            'or a list of Electrode objects.')
         return self
+
 
     def get_electrodes(self):
         return self.electrodes
+
 
     def electrodes_to_grid(self):
         """ """
@@ -62,6 +82,7 @@ class Lens(Grid):
             mask = mask.reshape(self.u.shape).astype(self.u.dtype)
             self.u = self.u + mask
         return self
+
 
     def solve_lens(self, *args):
         """ """

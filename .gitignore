@@ -91,3 +91,7 @@ ENV/
 
 # OSX stuff:
 .DS_Store
+
+# git stuff:
+.sublime-project
+.sublime-workspace
