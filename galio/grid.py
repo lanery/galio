@@ -4,18 +4,16 @@
 @Author: ryanlane
 @Date:   2016-10-30 12:44:41
 @Last Modified by:   Ryan Lane
-@Last Modified time: 2016-11-25 16:18:07
+@Last Modified time: 2016-11-28 01:16:05
 """
 
 
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 
 
 class Grid(object):
     """docstring for Grid"""
-    def __init__(self, nx, ny, xmin, xmax, ymin, ymax):
+    def __init__(self, nx=10, ny=10, xmin=0, xmax=10, ymin=0, ymax=10):
         super(Grid, self).__init__()
 
         self.nx = nx

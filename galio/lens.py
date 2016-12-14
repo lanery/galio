@@ -4,7 +4,7 @@
 @Author: ryanlane
 @Date:   2016-10-30 10:01:29
 @Last Modified by:   Ryan Lane
-@Last Modified time: 2016-11-27 00:50:49
+@Last Modified time: 2016-12-13 23:14:05
 """
 
 
@@ -20,18 +20,21 @@ from .electrode import Electrode
 class Lens(Grid):
     """docstring for Lens"""
 
-    def __init__(self, z, electrodes=[],
-                 nx=101, ny=51, xmin=0, xmax=30, ymin=0, ymax=10):
-        super(Lens, self).__init__(
-            nx, ny, xmin, xmax, ymin, ymax)
+    def __init__(self, z=0, electrodes=None, *grid_args, **grid_kws):
+        super(Lens, self).__init__(*grid_args, **grid_kws)
         self.z = z
+        if electrodes is None:
+            electrodes = []
         self.electrodes = electrodes
-
+        self.reflected = False
 
     def add_electrode(self, electrode):
         """
         Add either an individual or a list of electrodes to lens.
         """
+        if self.electrodes is None:
+            self.electrodes = []
+
         if isinstance(electrode, Electrode):
             if electrode not in self.electrodes:
                 self.electrodes.append(electrode)
@@ -43,7 +46,6 @@ class Lens(Grid):
             raise TypeError('`electrode` must be either an Electrode object '
                             'or a list of Electrode objects.')
         return self
-
 
     def rem_electrode(self, electrode):
         """
@@ -60,17 +62,15 @@ class Lens(Grid):
                     self.electrodes.remove(e)
                 else:
                     raise ValueError('Specified electrode not in lens.')
-        # if electrode != Electrode() and 
+        # if electrode != Electrode() and
         #    electrode != [Electrode(), Electrode(), ...]
         else:
             raise TypeError('`electrode` must be either an Electrode object '
                             'or a list of Electrode objects.')
         return self
 
-
     def get_electrodes(self):
         return self.electrodes
-
 
     def electrodes_to_grid(self):
         """ """
@@ -83,6 +83,17 @@ class Lens(Grid):
             self.u = self.u + mask
         return self
 
+    def reflect_lens(self):
+        """ Reflect lens across z-axis """
+        u = self.u
+        u_z0 = u[:, -1]
+        u_top = u[:, :-1]
+        u_bot = np.fliplr(u_top)
+
+        u_reflected = np.hstack([u_top, u_z0[:, None], u_bot])
+        self.u = u_reflected
+        self.reflected = True
+        return self
 
     def solve_lens(self, *args):
         """ """
@@ -93,10 +104,11 @@ class Lens(Grid):
         for e in electrodes:
             self.add_electrode(e)
             self.electrodes_to_grid()
+            self.reflect_lens()
             self.solve(*args)
             u_arr.append(self.u.copy())
             self.rem_electrode(e)
-            self.reset()
+            self.reset_lens()
 
         self.u_arr = np.array(u_arr)
         self.u = np.sum(self.u_arr, axis=0)
@@ -105,47 +117,10 @@ class Lens(Grid):
 
     def reset_lens(self):
         """ """
-        self.reset()
+        # if self.reflected:
+        #     pass
+        # self.reset()
+        self.u = np.zeros((self.nx, self.ny))
         for e in self.electrodes[:]:
             self.rem_electrode(e)
         return self
-
-
-
-def imshow_(arr, ax, *kwargs):
-    img = ax.imshow(arr.T, interpolation='nearest', origin='lower',
-                    cmap='Greys')
-    return img
-
-
-if __name__ == '__main__':
-
-    e1_coords = [[1, 1], [5, 1],
-                 [5, 5], [1, 5]]
-    e2_coords = [[9, 2], [14, 2],
-                 [12, 6]]
-
-    e1 = Electrode(10, e1_coords)
-    e2 = Electrode(100, e2_coords)
-
-    L1 = Lens(0, electrodes=[], nx=301, ny=101)
-    L1.add_electrode(e1)
-    L1.add_electrode(e2)
-    L1.electrodes_to_grid()
-
-    fig, (ax1, ax2) = plt.subplots(2)
-
-    ax1.add_patch(e1.poly)
-    ax1.add_patch(e2.poly)
-
-    ax1.set_xlim(L1.xmin, L1.xmax)
-    ax1.set_ylim(L1.ymin, L1.ymax)
-    ax1.set_aspect('equal')
-
-    imshow_(L1.u, ax2)
-
-    L1.solve_lens(1000)
-
-    img = ax2.contour(L1.u.T, interpolation='nearest', origin='lower')
-    plt.colorbar(img)
-    ax2.set_aspect('equal')
