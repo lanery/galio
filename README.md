@@ -1,2 +1,3 @@
 # galio
-Charged particle optics modeling package
+---
+Charged particle optics modeling package.

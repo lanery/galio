@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
+
 """
 @Author: ryanlane
 @Date:   2016-10-30 12:44:41
-@Last Modified by:   ryanlane
-@Last Modified time: 2016-10-31 22:19:07
+@Last Modified by:   Ryan Lane
+@Last Modified time: 2016-11-28 01:16:05
 """
 
+
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 
 
 class Grid(object):
     """docstring for Grid"""
-    def __init__(self, nx, ny, xmin, xmax, ymin, ymax):
+    def __init__(self, nx=10, ny=10, xmin=0, xmax=10, ymin=0, ymax=10):
         super(Grid, self).__init__()
 
         self.nx = nx
@@ -50,8 +50,7 @@ class Grid(object):
         u = self.u
         self.old_u = u.copy()
 
-        u[1:-1, 1:-1] = np.where(
-            u[1:-1, 1:-1] < 1,
+        u[1:-1, 1:-1] = np.where(u[1:-1, 1:-1] < 1,
             ((u[0:-2, 1:-1] + u[2:, 1:-1]) * dy2 +
              (u[1:-1, 0:-2] + u[1:-1, 2:]) * dx2) * 1/dnr, 1)
 
@@ -67,3 +66,7 @@ class Grid(object):
             err = self.laplace()
             c += 1
         return c
+
+    def reset(self):
+        self.u.fill(0)
+        return self

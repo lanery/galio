@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+
 """
 @Author: ryanlane
 @Date:   2016-10-30 02:10:04
-@Last Modified by:   ryanlane
-@Last Modified time: 2016-10-31 22:14:50
+@Last Modified by:   Ryan Lane
+@Last Modified time: 2016-11-25 16:18:10
 """
+
 
 import numpy as np
 import pandas as pd
@@ -31,11 +33,12 @@ class Electrode(object):
 
     def transform(self, lens):
         """ Transform electrode coords to lens grid. """
-        self.coords[:,0] = (
+        coords_t = np.zeros(self.coords.shape)
+        coords_t[:,0] = (
             self.coords[:,0] * lens.nx / (lens.xmax - lens.xmin))
-        self.coords[:,1] = (
+        coords_t[:,1] = (
             self.coords[:,1] * lens.ny / (lens.ymax - lens.ymin))
-        return self
+        return coords_t
 
 
 if __name__ == '__main__':
