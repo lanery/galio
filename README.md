@@ -1,3 +1,2 @@
 # galio
----
-Charged particle optics modeling package.
+(Future) charged particle optics modeling package. Not even remotely ready for any kind of use.
